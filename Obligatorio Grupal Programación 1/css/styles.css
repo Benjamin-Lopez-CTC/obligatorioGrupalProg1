@@ -4,7 +4,7 @@
 
 * {
     background-color: #f1f1f1f1;
-    font-family: Work sans;
+    font-family: Clobber Grotesk;
 }
 
 body {
@@ -45,7 +45,7 @@ nav ul li a {
     transition: 0.1s ease-out;
 }
 
-a:hover{
+a:hover {
     background-color: #30588b;
     transition: 0.1s ease-in;
 }
@@ -72,19 +72,21 @@ footer p {
     background-color: #00000000;
     font-weight: 600;
 }
-/*
-.imgEvento {
-    
-}*/
 
-.cartaEvento{
+.cartaEvento {
+    min-width: 40em;
     margin: 1em;
     padding: 1em;
-    display: flexbox;
-    text-align: right;
+    display:flex;
+    align-items: center;
+    flex-direction:column;
     gap: 10px; 
     border-radius: 5px;
     border-width: 1px;
     border-style: solid;
     border-color: black;
+}
+
+.imgEvento {
+    flex-direction:row;
 }
