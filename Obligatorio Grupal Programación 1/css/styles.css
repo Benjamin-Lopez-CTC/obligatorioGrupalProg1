@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
-    background-color: #f1f1f1f1;
+    background-color: #f1f1f1;
     font-family: Clobber Grotesk;
 }
 
@@ -74,6 +74,7 @@ footer p {
 }
 
 .cartaEvento {
+    position: relative;
     min-width: 30em;
     margin: 1em;
     padding: 1em;
@@ -126,7 +127,31 @@ footer p {
 .comprar:active {
     background-color: #17355e;
     transition: 0.1s ease-in;
-    cursor: pointer;
+}
+
+.categoria {
+    position: absolute;
+    top: 4px;
+    right: 10px;
+    font-size: 20px;
+    color: #00000050;
+    max-height: 15px;
+    background-color: transparent;
+    color: #00000075
+}
+
+#seleccionarPersona {
+    margin: 1em;
+    float: right;
+    border-radius: 4px;
+    border: 1px solid #00000025;
+    box-shadow: 0px 0px 3px #00000050;
+    padding: 0.5em;
+}
+
+body main label#persona {
+    float: right;
+    margin: 21px 21px 0px 0px;
 }
 
 .imgEvento {
@@ -134,4 +159,16 @@ footer p {
     border-radius: 8px;
     overflow: hidden;
     margin: 0px;
+}
+
+body main label#categoria {
+    margin-left: 1em;
+}
+
+#seleccionarCategoria{
+    border: 1px solid #00000025;
+    margin: 1em;
+    padding: 0.5em;
+    border-radius: 4px;
+    box-shadow: 0px 0px 3px #00000050;
 }
