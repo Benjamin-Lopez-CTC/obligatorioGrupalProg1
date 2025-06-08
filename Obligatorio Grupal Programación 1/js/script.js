@@ -21,11 +21,12 @@ function mostrarEvento(evento) {
             </div>`;
 }
 
+/* Filtrar por categoría */
 filtroCategoria.addEventListener("change", () => {
     let categoria = filtroCategoria.value;
     let categoriaFiltrada = [];
 
-    if (categoria === "todos") {
+    if (categoria === "Todos") {
         categoriaFiltrada = eventos;
     } else {
         categoriaFiltrada = eventos.filter(evento => evento.categoria === categoria);

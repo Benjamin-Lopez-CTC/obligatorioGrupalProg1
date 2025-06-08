@@ -1,7 +1,5 @@
 /* styles.css */
 
-@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-
 * {
     background-color: #f1f1f1;
     font-family: Clobber Grotesk;
@@ -18,7 +16,6 @@ nav ul {
     padding: 0;
     background-color: #628ec9;
     overflow: hidden;
-    box-shadow: 2px 2px;
 }
 
 nav ul li {
@@ -58,13 +55,17 @@ a:hover {
     justify-content: center;
 }
 
+main {
+    flex: 1;
+    padding: 20px;
+}
+
 footer {
     background-color: #628ec9;
     color: #ffffff;
     text-align: center;
+    margin-top: 3em;
     padding: 10px 0;
-    position: fixed;
-    bottom: 0;
     width: 100%;
 }
 
@@ -171,4 +172,31 @@ body main label#categoria {
     padding: 0.5em;
     border-radius: 4px;
     box-shadow: 0px 0px 3px #00000050;
+}
+
+.button {
+    float: right;
+    margin: 0 3.5em;
+    padding: 0.5em;
+    border: 1px solid #00000025;
+    border-radius: 4px;
+    box-shadow: 0px 0px 3px #00000050;
+    text-decoration: none;
+    color: #000000;
+    font-weight: 500;
+}
+
+.button:hover {
+    background-color: #d3e4ff;
+    transition: 0.1s ease-in;
+    box-shadow: 0px 0px 5px #00000025;
+    cursor: pointer
+}
+
+/* Imagen de las paginas de carrito y estadísticas */
+.image {
+    display: flex;
+    justify-self: center;
+    padding: 5em;
+    margin-bottom: 17em;
 }
