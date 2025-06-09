@@ -5,10 +5,10 @@ function guardarEventosEnLocalStorage(eventos) {
 document.querySelector("#evento-form").addEventListener("submit", (e) => {
     e.preventDefault();
     // Obtener los valores del form
-    let imagen = document.querySelector("#imagen").value;
-    let tipo = document.querySelector("#tipo").value;
-    let categoria = document.querySelector("#categoria").value;
-    let precio = document.querySelector("#precio").value;
+    let imagen = document.querySelector("#imagen").value; 
+    let tipo = document.querySelector("#tipo").value; 
+    let categoria = document.querySelector("#categoria").value; 
+    let precio = document.querySelector("#precio").value; 
     // Validaciones simples
     if (imagen == "" || tipo == "" || precio == "") {
         alert("Por favor llene todos los campos");
@@ -21,7 +21,7 @@ document.querySelector("#evento-form").addEventListener("submit", (e) => {
             codigo: cantidad + 1,
             tipo: tipo,
             categoria: categoria,
-            precio: precio
+            precio: parseInt(precio)
         };
         // Agregar el nuevo evento al array
 

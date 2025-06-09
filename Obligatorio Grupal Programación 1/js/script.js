@@ -8,20 +8,31 @@ function cargarEventos(eventos) {
     });
 }
 
-cargarEventos(eventos);
+// Al cargar la página
+window.addEventListener('load', function() {
+    // Obtener los eventos almacenados de localStorage
+    let eventosAlmacenados = obtenerEventosDeLocalStorage();
+    // Cargar los eventos en la página
+    eventosAlmacenados.length > 0 ? cargarEventos(eventosAlmacenados) : cargarEventos(eventos);
+});
+
+function obtenerEventosDeLocalStorage() {
+    let eventosString = localStorage.getItem('eventos');
+    return eventosString ? JSON.parse(eventosString) : [];
+}
 
 function mostrarEvento(evento) {
     return `<div class="cartaEvento">
             <div class="imgEvento"><img src='${evento.imagen}'></div>
             <p class="categoria">${evento.categoria}</p>
             <div class="eventoTexto">
-            <p class="evento">${evento.tipo}</p>
-            <p class="precio">$ ${evento.precio}</p>
+            <p class="tipo">${evento.tipo}</p>
+            <p class="importe">$ ${evento.precio}</p>
             <button class="comprar" id="${evento.codigo}">Comprar</button>
             </div>`;
 }
 
-/* Filtrar por categoría */
+// Filtrar por categoría
 filtroCategoria.addEventListener("change", () => {
     let categoria = filtroCategoria.value;
     let categoriaFiltrada = [];
@@ -29,7 +40,7 @@ filtroCategoria.addEventListener("change", () => {
     if (categoria === "Todos") {
         categoriaFiltrada = eventos;
     } else {
-        categoriaFiltrada = eventos.filter(evento => evento.categoria === categoria);
+        categoriaFiltrada = obtenerEventosDeLocalStorage().filter(evento => evento.categoria === categoria);
     }
     cargarEventos(categoriaFiltrada);
 })

@@ -134,7 +134,7 @@ form input[type="file"]{
     float: left;
     border: 1px solid #ccc;
     display: block;
-    padding: 7px 14px;
+    padding: 10px 20px;
     cursor: pointer;
     transition: 0.1s ease-in;
 }
