@@ -35,12 +35,17 @@ function mostrarEvento(evento) {
 // Filtrar por categoría
 filtroCategoria.addEventListener("change", () => {
     let categoria = filtroCategoria.value;
+    let eventosAlmacenados = obtenerEventosDeLocalStorage();
+    if (eventosAlmacenados.length === 0) {
+        eventosAlmacenados = eventos;
+    };
+
     let categoriaFiltrada = [];
 
     if (categoria === "Todos") {
-        categoriaFiltrada = eventos;
+        categoriaFiltrada = eventosAlmacenados;
     } else {
-        categoriaFiltrada = obtenerEventosDeLocalStorage().filter(evento => evento.categoria === categoria);
+        categoriaFiltrada = eventosAlmacenados.filter(evento => evento.categoria === categoria);
     }
     cargarEventos(categoriaFiltrada);
 })
