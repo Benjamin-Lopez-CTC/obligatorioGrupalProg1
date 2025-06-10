@@ -10,7 +10,7 @@ document.querySelector("#evento-form").addEventListener("submit", (e) => {
     let categoria = document.querySelector("#categoria").value; 
     let precio = document.querySelector("#precio").value; 
     // Validaciones simples
-    if (imagen == "" || tipo == "" || precio == "") {
+    if (imagen == "" || tipo == "" || precio == "" || categoria == "") {
         alert("Por favor llene todos los campos");
     } else {
         let eventosStorage = obtenerEventosDeLocalStorage();

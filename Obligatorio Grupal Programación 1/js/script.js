@@ -23,7 +23,7 @@ function obtenerEventosDeLocalStorage() {
 
 function mostrarEvento(evento) {
     return `<div class="cartaEvento">
-            <div class="imgEvento"><img src='${evento.imagen}'></div>
+            <div class="imgEvento"><img class="imgSize" src='${evento.imagen}'></div>
             <p class="categoria">${evento.categoria}</p>
             <div class="eventoTexto">
             <p class="tipo">${evento.tipo}</p>
