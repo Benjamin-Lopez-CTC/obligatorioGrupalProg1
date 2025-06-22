@@ -18,36 +18,62 @@
         </ul>
     </nav>
     </header>
-    <div class="container_2">
-        
-
-        <nav>
-            <a href="../index.html" class="btnInicio">Ir al Inicio</a>
-        </nav>
-
-        <form action="" id="evento-form" class="form" autocomplete="off">
-            <p class="title">Alta de evento</p>
+    <main>
+        <div class="container_2">
+            <nav>
+                <a href="../index.html" class="btnInicio">Ir al Inicio</a>
+            </nav>
+            <form action="" id="evento-form" class="form" autocomplete="off">
+                <p class="title">Alta de evento</p>
             
-            <label for="tipo">Tipo</label>
-            <input class="form-control" id="tipo" type="text" placeholder="Ingrese el tipo">
+                <label for="tipo">Nombre</label>
+                <input class="form-control" id="tipo" type="text" placeholder="Ingrese el nombre del evento">
 
-            <label for="categoria">Categoría</label>
-            <input class="form-control" id="categoria" type="text" placeholder="Ingrese la categoría: Eventos/Deportes/Conciertos">
+                <label for="categoria">Categoría</label>
+                <input class="form-control" id="categoria" type="text" placeholder="Ingrese la categoría: Eventos/Deportes/Conciertos">
 
-            <label for="precio">Precio</label>
-            <input class="form-control" id="precio" type="text" placeholder="Ingrese el precio">
+                <label for="precio">Precio</label>
+                <input class="form-control" id="precio" type="text" placeholder="Ingrese el precio">
             
-            <label for="imagen" class="custom-file-upload">Imagen</label>
-            <input type="file" class="form-control" id="imagen" name="imagen">
+                <label for="imagen" class="custom-file-upload">Imagen</label>
+                <input type="file" class="form-control" id="imagen" name="imagen">
 
-            <input class="btn" type="submit" value="Agregar">
-        </form>
-    </div>
+                <input class="btn" type="submit" value="Agregar">
+            </form>
+        </div>
 
+            <hr>
+
+        <!-- Div que contiene los eventos a modificar/eliminar -->
+        <div class="mostrarEventos"></div>
+
+        <!-- Popup para la modificación de espectáculos -->
+        <div id="popup" style="display: none;">
+            <div class="titleYBtn">
+                <h2 class="edit">Modificar evento</h2>
+                <button class="cancelar">Cancelar</button>
+            </div>
+            <form id="editarEvento" autocomplete="off">
+                <label for="editarNombre">Nombre</label>
+                <input class="input" id="editarNombre" type="text" placeholder="Ingrese el nuevo nombre">
+
+                <label for="editarCategoria">Categoría</label>
+                <input class="input" id="editarCategoria" type="text" placeholder="Ingrese la nueva categoría: Eventos/Deportes/Conciertos">
+
+                <label for="editarPrecio">Precio</label>
+                <input class="input" id="editarPrecio" type="text" placeholder="Ingrese el nuevo precio">
+
+                <label for="editarImagen">Imagen</label>
+                <input class="input" id="editarImagen" type="file" name="Nueva imagen">
+
+                <input class="btn" type="submit" value="Modificar">
+            </form>
+        </div>
+    </main>
     <footer>
             <p>&copy;Benjamín López y Felipe Alvarez - 2025</p>
     </footer>
-    <script src="../js/eventos.js"></script>
-    <script src="../js/crud.js"></script>
+    <script type="module" src="../js/eventos.js"></script>
+    <script type="module" src="../js/crud.js"></script>
 </body>
 </html>

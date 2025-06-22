@@ -47,13 +47,20 @@ nav ul li a:hover {
     transition: 0.1s ease-in;
 }
 
+hr {
+    width: 95%;
+    height: 5px;
+    background-color:#628ec9;
+    border-style: none;
+    border-radius: 5px;
+}
+
 footer {
     background-color: #628ec9;
-    color: #fff;
+    color: #ffffff;
     text-align: center;
+    margin-top: 3em;
     padding: 10px 0;
-    position: fixed;
-    bottom: 0;
     width: 100%;
 }
 
@@ -93,19 +100,31 @@ footer p {
 }
 
 #evento-form{
-    position: absolute;
-    min-width: 30em;
-    margin: 2em 1em;
-    padding: 1em;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 2rem;
+    background-color: #ffffff;
     border-radius: 10px;
     border-width: 1px;
     border-style:hidden;
     border-color: none;
-    background-color: #ffffff;
     box-shadow: 0px 0px 15px #a7a7a7;
     display: flex;
     flex-direction: column;
-    align-self: center;
+    gap: 1rem;
+}
+
+.imgEvento {
+    height: 256px;
+    float: left;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0px;
+}
+
+.imgSize {
+    width: 256px;
+    height: auto;
 }
 
 form label{
@@ -124,20 +143,9 @@ form input[type="text"]{
     margin-bottom: 10px;   
 }
 
-form input[type="file"]{
-    display: none;
-}
-
-.custom-file-upload {
-    margin: 12px 0;
-    max-width: 3em;
-    border-radius: 4px;
-    float: left;
-    border: 1px solid #ccc;
-    display: block;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: 0.1s ease-in;
+.form input[type="file"]{
+    padding: 7px;
+    margin-bottom: 10px;
 }
 
 .custom-file-upload:hover {
@@ -157,5 +165,165 @@ form input[type="file"]{
 
 .btn:hover {
     background-color: #00000010;
+    transition: 0.1s ease-in;
+}
+
+.btn:active {
+    background-color:#00000025;
+    transition: 0.1s ease-in;
+}
+
+.mostrarEventos {
+    padding: 2em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cartaEvento {
+    position: relative;
+    max-width: 40em;
+    margin: 1em;
+    padding: 1em;
+    display: flex;
+    justify-content:space-evenly;
+    gap: 10px;
+    border-radius: 10px;
+    border-width: 1px;
+    border-style:hidden;
+    border-color: none;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 15px #a7a7a7;
+    transition: 0.2s ease-in;
+}
+
+.cartaEvento:hover {
+    background-color: #eef5ff;
+    transition: 0.2s ease-in;
+}
+
+.eventoTexto {
+    align-self: center;
+    justify-items: self-end;
+    font-size: 21px;
+    inline-size: 250px;
+    text-align: end;
+    background-color: transparent;
+}
+
+.tipo, .importe {
+    background-color: transparent;
+}
+
+.modificar {
+    border-style: hidden;
+    border-radius: 5px;
+    padding: 10px 18px;
+    background-color: #ffbb00;
+    color: #ffffff;
+    font-size: 20px;
+    transition: 0.1s ease-in;
+}
+
+.modificar:hover {
+    background-color: #ce8600;
+    cursor: pointer;
+    transition: 0.1s ease-in;
+}
+
+.modificar:active {
+    background-color: #ac6100;
+    transition: 0.1s ease-in;
+}
+
+.eliminar {
+    border-style: hidden;
+    border-radius: 5px;
+    padding: 10px 18px;
+    background-color: #ff0000;
+    color: #ffffff;
+    font-size: 20px;
+    transition: 0.1s ease-in;
+}
+
+.eliminar:hover {
+    background-color: #ce0000;
+    cursor: pointer;
+    transition: 0.1s ease-in;
+}
+
+.eliminar:active {
+    background-color: #990000;
+    transition: 0.1s ease-in;
+}
+
+.categoria {
+    position: absolute;
+    top: 4px;
+    right: 10px;
+    font-size: 20px;
+    color: #00000050;
+    max-height: 15px;
+    background-color: transparent;
+    color: #00000075
+}
+
+/* POPUP PARA MODIFICAR TAREAS */
+#popup {
+    display: block;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 500px;
+    padding: 20px;
+    background-color:#fff;
+    border-style: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 17px 0px #00000063;
+}
+
+.titleYBtn {
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#popup h2 {
+    font-weight: 600;
+    background-color: transparent;
+}
+
+#editarEvento {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+}
+
+#editarEvento input[type="file"] {
+    padding: 7px;
+    margin-bottom: 10px;
+}
+
+.cancelar {
+    padding: 10px 15px;
+    font-size: 15px;
+    border: 1px solid #00000025;
+    border-radius: 5px;
+    margin: 0 1em;
+    background-color: white;
+    transition: 0.1s ease-in;
+}
+
+.cancelar:hover {
+    background-color: #00000010;
+    cursor: pointer;
+    transition: 0.1s ease-in;
+}
+
+.cancelar:active {
+    background-color:#00000025;
     transition: 0.1s ease-in;
 }
