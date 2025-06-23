@@ -1,6 +1,10 @@
 /* styles.css */
 
 * {
+    font-family: Clobber Grotesk;
+}
+
+html {
     background-color: #f1f1f1;
     font-family: Clobber Grotesk;
 }
@@ -197,4 +201,129 @@ body main label#categoria {
     transition: 0.1s ease-in;
     box-shadow: 0px 0px 5px #00000025;
     cursor: pointer
+}
+
+/* SECCIÓN DEL CARRITO */
+
+hr {
+    width: 95%;
+    height: 5px;
+    background-color:#628ec9;
+    border-style: none;
+    border-radius: 5px;
+}
+
+.titleCart {
+    display: flex;
+    justify-content: center;
+    margin: 1em 0;
+    position: relative;
+    font-weight: 500;
+}
+
+.carritoExterior {
+    display:flex;
+    justify-content: space-between;
+    position: relative;
+    height: 30em;
+    width:75%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border: none;
+    border-radius: 10px;
+    background-color: #ffffff;
+    margin: 3em 0;
+    padding: 2em;
+    gap: 20px;
+}
+
+.carrito {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 80%;
+    flex: 1 1 0;
+    background-color: #e2e2e2;
+    overflow: hidden;
+}
+
+.carrito > li {
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+    padding: 0 10px;
+    font-size: 18px;
+    border-bottom: 1px solid #cecece;
+}
+
+.carrito > li:nth-of-type(odd) {
+    background-color: #f1f1f1;
+}
+
+.detalles {
+    display: flex;
+    flex: 1 1 0;
+    padding: 0 10px;
+    justify-content: space-between;
+}
+
+.eliminarCheckout {
+    display: flex;
+    align-items: center;
+    margin: 10px 5px;
+    padding: 5px 10px;
+    font-size: 15px;
+    background-color: #ff0000;
+    color: #ffffff;
+    border-style: none;
+    border-radius: 5px;
+    transition: 0.1s ease-out;
+}
+
+.eliminarCheckout:hover {
+    background-color: #c50000;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+}
+
+.eliminarCheckout:active {
+    background-color: #a30000;
+    transition: 0.05s ease-in-out;
+}
+
+.totalYBtn {
+    background-color: #fff;
+    width: 20%;
+    border-radius: 10px;
+}
+
+#total {
+    background-color: transparent;
+    font-size: 22px;
+}
+
+.checkout {
+    display: flex;
+    width: 100%;
+    background-color: #628ec9;
+    color: #ffffff;
+    border-style: none;
+    border-radius: 10px;
+    justify-content: center;
+    font-size: 19px;
+    padding: 10px 1.5em;
+    transition: 0.1s ease-out;
+}
+
+.checkout:hover {
+    background-color:#30588b;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+}
+
+.checkout:active {
+    background-color:#17355e;
+    transition: 0.05s ease-in-out;
 }

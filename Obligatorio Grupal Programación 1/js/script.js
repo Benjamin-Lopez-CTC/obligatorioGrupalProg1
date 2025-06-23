@@ -14,10 +14,13 @@ function cargarEventos(eventos) {
 
 // Al cargar la página
 window.addEventListener('load', function() {
-    // Obtener los eventos almacenados de localStorage
+    // Obtener los eventos y carritos almacenados de localStorage
     let eventosAlmacenados = obtenerEventosDeLocalStorage();
+    let idPersona = this.document.getElementById('seleccionarPersona').value;
+    let carritosAlmacenados = obtenerCarritoDeLS(idPersona);
     // Cargar los eventos en la página
     eventosAlmacenados.length > 0 ? cargarEventos(eventosAlmacenados) : cargarEventos(eventos);
+    mostrarCarrito(carritosAlmacenados);
 });
 
 function obtenerEventosDeLocalStorage() {
@@ -35,25 +38,6 @@ function mostrarEvento(evento) {
             <button class="comprar" id="${evento.codigo}">Comprar</button>
             </div>`;
 }
-
-document.querySelector('.container').addEventListener('click', function(e) {
-    if (e.target.classList.contains('comprar')) {
-        let tipo = document.querySelector('.tipo').value;
-        let precio = document.querySelector('.importe').value;
-
-        let eventoCarrito = {
-            tipo: tipo,
-            precio: parseInt(precio)
-        };
-
-        let idPersona = document.getElementById('seleccionarPersona').value;
-        let carrito = obtenerCarritoDeLS(idPersona);
-        carrito.push(eventoCarrito);
-        guardarCarritoEnLS(idPersona, carrito);
-        mostrarCarrito(carrito);
-        alert('Evento agregado al carrito');
-    }
-});
 
 // Filtrar por categoría
 
@@ -80,6 +64,27 @@ filtroCategoria.addEventListener("change", () => {
     cargarEventos(categoriaFiltrada);
 })
 
+document.querySelector('.container').addEventListener('click', function(e) {
+    if (e.target.classList.contains('comprar')) {
+        // Buscar la carta del evento a añadir al carrito
+        let carta = e.target.closest('.cartaEvento');
+        let tipo = carta.querySelector('.tipo').textContent;
+        let precio = carta.querySelector('.importe').textContent.replace('$', '');
+
+        let eventoCarrito = {
+            tipo: tipo,
+            precio: parseInt(precio)
+        };
+
+        let idPersona = document.getElementById('seleccionarPersona').value;
+        let carrito = obtenerCarritoDeLS(idPersona);
+        carrito.push(eventoCarrito);
+        guardarCarritoEnLS(idPersona, carrito);
+        mostrarCarrito(carrito);
+        alert('Evento agregado al carrito');
+    }
+});
+
 function guardarCarritoEnLS(idPersona, carrito) {
     let carritos = JSON.parse(localStorage.getItem('carritos')) || {};
     carritos[idPersona] = carrito;
@@ -97,25 +102,79 @@ function mostrarCarrito(carrito) {
     let compra = document.querySelector('.carrito');
     if (!compra) return; // Si no existe, no hace nada
     
-    compra.innerHTML = ""
+    
+    compra.innerHTML = "";
+    let totalCompra = 0;
     carrito.forEach(evento => {
         compra.innerHTML += `
         <li>
-            <p>Evento: ${evento.tipo}</p>
-            <p>Precio: $${evento.precio}</p>
+            <div class='detalles'>
+                <p>Evento: ${evento.tipo}</p>
+                <p>Precio: $${evento.precio}</p>
+            </div>
             <button class="eliminarCheckout">Eliminar</button>
         </li>`
+        totalCompra += evento.precio;
     });
+
+    // Mostrar el total en el elemento con id="total" y aplicar un descuento si se compran mas de dos espectáculos
+    if (carrito.length > 2) {
+        document.getElementById('total').textContent = `Total: $${totalCompra * 0.90}`;
+    } else {
+        document.getElementById('total').textContent = `Total: $${totalCompra}`;
+    };
 }
 
-let personas = [
-    { id: 0, nombre: "Benjamín", eventos: []},
-    { id: 1, nombre: "Felipe", eventos: []},
-    { id: 2, nombre: "Carlos", eventos: []},
-];
+document.querySelector('.carrito').addEventListener('click', function(e) {
+    if (e.target.classList.contains('eliminarCheckout')) {
+        // Encontrar el indice del <li> clickeado
+        const li = e.target.closest('li');
+        const lis = Array.from(document.querySelectorAll('.carrito li'));
+        const index = lis.indexOf(li);
 
+        // Obtener el id de la persona seleccionada
+        let idPersona = document.getElementById('seleccionarPersona').value;
+        let carrito = obtenerCarritoDeLS(idPersona);
+
+        // Eliminar el evento del carrito
+        carrito.splice(index, 1);
+
+        // Guardar en LS y mostrar el carrito actualizado
+        guardarCarritoEnLS(idPersona, carrito);
+        mostrarCarrito(carrito);
+    }
+});
+
+// Limpiar el carrito de la persona al hacer click en finalizar compra
+document.querySelector('.checkout').addEventListener('click', function() {
+    let idPersona = document.getElementById('seleccionarPersona').value;
+    let carrito = obtenerCarritoDeLS(idPersona);
+
+    if (carrito.length > 0) {
+        let confirmCheckout = confirm('¿Está seguro de que desea continuar con el pago?');
+        if(confirmCheckout) {
+            let carritos = JSON.parse(localStorage.getItem('carritos')) || {};
+            carritos[idPersona] = [];
+            localStorage.setItem('carritos', JSON.stringify(carritos));
+            mostrarCarrito([]);
+            alert('Compra realizada exitosamente');
+        }
+    } else {
+        alert('No tiene artículos en el carrito para comprar');
+    };
+});
+
+// Mostrar el nombre de la persona en el título del carrito
+function actualizarNombrePersona() {
+    const select = document.getElementById('seleccionarPersona');
+    const nombre = select.options[select.selectedIndex].textContent;
+    document.getElementById('nombrePersona').textContent = nombre;
+};
+
+window.addEventListener('load', actualizarNombrePersona);
 document.getElementById('seleccionarPersona').addEventListener('change', function() {
+    actualizarNombrePersona();
     let idPersona = this.value;
     let carrito = obtenerCarritoDeLS(idPersona);
-    mostrarCarrito(carrito)
-})
+    mostrarCarrito(carrito);
+});
