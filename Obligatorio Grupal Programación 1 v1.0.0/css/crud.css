@@ -1,0 +1,329 @@
+/* crud.css */
+
+* {
+    background-color: #f1f1f1;
+    font-family: Clobber Grotesk;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+nav ul {
+    list-style-type:none;
+    margin: 0;
+    padding: 0;
+    background-color: #628ec9;
+    overflow: hidden;
+}
+
+nav ul li {
+    float: right;
+    background-color: transparent;
+}
+
+.logo {
+    width: 200px;
+    height: auto;
+    float: left;
+    margin: 0.5em;
+    background-color: transparent;
+}
+
+nav ul li a {
+    display: block;
+    background-color: transparent;
+    color: #ffffff;
+    text-align: center;
+    font-weight: 600;
+    padding: 16px 22px;
+    text-decoration: none;
+    transition: 0.1s ease-out;
+}
+
+nav ul li a:hover {
+    background-color: #30588b;
+    transition: 0.1s ease-in;
+}
+
+hr {
+    width: 95%;
+    height: 5px;
+    background-color:#628ec9;
+    border-style: none;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #628ec9;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 3em;
+    padding: 10px 0;
+    width: 100%;
+}
+
+footer p {
+    background-color: transparent;
+    font-weight: 600;
+}
+
+.title {
+    background-color: transparent;
+    font-size: xx-large;
+    font-weight: 600;
+}
+
+.container_2 {
+    margin: 20px;
+    position:relative;
+}
+
+.btnInicio {
+    border: 1px solid #00000025;
+    border-radius: 4px;
+    margin: 1em;
+    text-decoration: none;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 0.5em;
+    box-shadow: 0px 0px 5px #00000050;
+    transition: 0.2s ease-in;
+}
+
+.btnInicio:hover {
+    background-color: #d3e4ff;
+    transition: 0.1s ease-in;
+    box-shadow: 0px 0px 5px #00000025;
+    cursor: pointer
+}
+
+#evento-form{
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border-width: 1px;
+    border-style:hidden;
+    border-color: none;
+    box-shadow: 0px 0px 15px #a7a7a7;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.imgEvento {
+    height: 256px;
+    float: left;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0px;
+}
+
+.imgSize {
+    width: 256px;
+    height: auto;
+}
+
+form label{
+    margin: 10px;
+    background-color: transparent;
+}
+
+form input {
+    max-width: 75%;
+    border-radius: 4px;
+    border: 1px solid #00000025;
+}
+
+form input[type="text"]{
+    padding: 7px;
+    margin-bottom: 10px;   
+}
+
+.form input[type="file"]{
+    padding: 7px;
+    margin-bottom: 10px;
+}
+
+.custom-file-upload:hover {
+    background-color: #00000010;
+    transition: 0.1s ease-in;
+}
+
+.btn{
+    background-color: #ffffff;
+    color: #000000;
+    padding: 0.5em;
+    margin-top: 3em;
+    width: 25%;
+    cursor: pointer;
+    transition: 0.1s ease-in;
+}
+
+.btn:hover {
+    background-color: #00000010;
+    transition: 0.1s ease-in;
+}
+
+.btn:active {
+    background-color:#00000025;
+    transition: 0.1s ease-in;
+}
+
+.mostrarEventos {
+    padding: 2em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cartaEvento {
+    position: relative;
+    max-width: 40em;
+    margin: 1em;
+    padding: 1em;
+    display: flex;
+    justify-content:space-evenly;
+    gap: 10px;
+    border-radius: 10px;
+    border-width: 1px;
+    border-style:hidden;
+    border-color: none;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 15px #a7a7a7;
+    transition: 0.2s ease-in;
+}
+
+.cartaEvento:hover {
+    background-color: #eef5ff;
+    transition: 0.2s ease-in;
+}
+
+.eventoTexto {
+    align-self: center;
+    justify-items: self-end;
+    font-size: 21px;
+    inline-size: 250px;
+    text-align: end;
+    background-color: transparent;
+}
+
+.tipo, .importe {
+    background-color: transparent;
+}
+
+.modificar {
+    border-style: hidden;
+    border-radius: 5px;
+    padding: 10px 18px;
+    background-color: #ffbb00;
+    color: #ffffff;
+    font-size: 20px;
+    transition: 0.1s ease-in;
+}
+
+.modificar:hover {
+    background-color: #ce8600;
+    cursor: pointer;
+    transition: 0.1s ease-in;
+}
+
+.modificar:active {
+    background-color: #ac6100;
+    transition: 0.1s ease-in;
+}
+
+.eliminar {
+    border-style: hidden;
+    border-radius: 5px;
+    padding: 10px 18px;
+    background-color: #ff0000;
+    color: #ffffff;
+    font-size: 20px;
+    transition: 0.1s ease-in;
+}
+
+.eliminar:hover {
+    background-color: #ce0000;
+    cursor: pointer;
+    transition: 0.1s ease-in;
+}
+
+.eliminar:active {
+    background-color: #990000;
+    transition: 0.1s ease-in;
+}
+
+.categoria {
+    position: absolute;
+    top: 4px;
+    right: 10px;
+    font-size: 20px;
+    color: #00000050;
+    max-height: 15px;
+    background-color: transparent;
+    color: #00000075
+}
+
+/* POPUP PARA MODIFICAR TAREAS */
+#popup {
+    display: block;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 500px;
+    padding: 20px;
+    background-color:#fff;
+    border-style: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 17px 0px #00000063;
+}
+
+.titleYBtn {
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#popup h2 {
+    font-weight: 600;
+    background-color: transparent;
+}
+
+#editarEvento {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+}
+
+#editarEvento input[type="file"] {
+    padding: 7px;
+    margin-bottom: 10px;
+}
+
+.cancelar {
+    padding: 10px 15px;
+    font-size: 15px;
+    border: 1px solid #00000025;
+    border-radius: 5px;
+    margin: 0 1em;
+    background-color: white;
+    transition: 0.1s ease-in;
+}
+
+.cancelar:hover {
+    background-color: #00000010;
+    cursor: pointer;
+    transition: 0.1s ease-in;
+}
+
+.cancelar:active {
+    background-color:#00000025;
+    transition: 0.1s ease-in;
+}
