@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTC Arena - Gestionar Eventos</title>
+    <link rel="icon" href="../images/ctc.png" type="image/png">
+    <link rel="stylesheet" href="../css/crud.css">
+    <link rel="stylesheet" href="../fonts/clobber_grotesk/stylesheet.css" type="text/css">
+</head>
+<body>
+    <header>
+    <nav>
+        <ul>
+            <a href="../index.html"><img src="../images/CTC_arena.png" alt="CTC Arena" class="logo"></a>
+            <li><a href="../pages/estadisticas.html">Estadísticas</a></li>
+        </ul>
+    </nav>
+    </header>
+    <main>
+        <div class="container_2">
+            <nav>
+                <a href="../index.html" class="btnInicio">Ir al Inicio</a>
+            </nav>
+            <form action="" id="evento-form" class="form" autocomplete="off">
+                <p class="title">Alta de evento</p>
+            
+                <label for="tipo">Nombre</label>
+                <input class="form-control" id="tipo" type="text" placeholder="Ingrese el nombre del evento">
+
+                <label for="categoria">Categoría</label>
+                <input class="form-control" id="categoria" type="text" placeholder="Ingrese la categoría: Eventos/Deportes/Conciertos">
+
+                <label for="precio">Precio</label>
+                <input class="form-control" id="precio" type="text" placeholder="Ingrese el precio">
+            
+                <label for="imagen" class="custom-file-upload">Imagen</label>
+                <input type="file" class="form-control" id="imagen" name="imagen">
+
+                <input class="btn" type="submit" value="Agregar">
+            </form>
+        </div>
+
+            <hr>
+
+        <!-- Div que contiene los eventos a modificar/eliminar -->
+        <div class="mostrarEventos"></div>
+
+        <!-- Popup para la modificación de espectáculos -->
+        <div id="popup" style="display: none;">
+            <div class="titleYBtn">
+                <h2 class="edit">Modificar evento</h2>
+                <button class="cancelar">Cancelar</button>
+            </div>
+            <form id="editarEvento" autocomplete="off">
+                <label for="editarNombre">Nombre</label>
+                <input class="input" id="editarNombre" type="text" placeholder="Ingrese el nuevo nombre">
+
+                <label for="editarCategoria">Categoría</label>
+                <input class="input" id="editarCategoria" type="text" placeholder="Ingrese la nueva categoría: Eventos/Deportes/Conciertos">
+
+                <label for="editarPrecio">Precio</label>
+                <input class="input" id="editarPrecio" type="text" placeholder="Ingrese el nuevo precio">
+
+                <label for="editarImagen">Imagen</label>
+                <input class="input" id="editarImagen" type="file" name="Nueva imagen">
+
+                <input class="btn" type="submit" value="Modificar">
+            </form>
+        </div>
+    </main>
+    <footer>
+            <p>&copy;Benjamín López y Felipe Alvarez - 2025</p>
+    </footer>
+    <script type="module" src="../js/eventos.js"></script>
+    <script type="module" src="../js/crud.js"></script>
+</body>
+</html>
