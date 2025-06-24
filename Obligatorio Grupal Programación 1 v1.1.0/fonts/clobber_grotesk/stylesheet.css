@@ -1,0 +1,96 @@
+@font-face {
+    font-family: 'Clobber Grotesk';
+    src: url('ClobberGrotesk-Medium.eot');
+    src: local('Clobber Grotesk Medium'), local('ClobberGrotesk-Medium'),
+        url('ClobberGrotesk-Medium.eot?#iefix') format('embedded-opentype'),
+        url('ClobberGrotesk-Medium.woff2') format('woff2'),
+        url('ClobberGrotesk-Medium.woff') format('woff'),
+        url('ClobberGrotesk-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Clobber Grotesk';
+    src: url('ClobberGrotesk-Light.eot');
+    src: local('Clobber Grotesk Light'), local('ClobberGrotesk-Light'),
+        url('ClobberGrotesk-Light.eot?#iefix') format('embedded-opentype'),
+        url('ClobberGrotesk-Light.woff2') format('woff2'),
+        url('ClobberGrotesk-Light.woff') format('woff'),
+        url('ClobberGrotesk-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Clobber Grotesk';
+    src: url('ClobberGrotesk-Italic.eot');
+    src: local('Clobber Grotesk Italic'), local('ClobberGrotesk-Italic'),
+        url('ClobberGrotesk-Italic.eot?#iefix') format('embedded-opentype'),
+        url('ClobberGrotesk-Italic.woff2') format('woff2'),
+        url('ClobberGrotesk-Italic.woff') format('woff'),
+        url('ClobberGrotesk-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Clobber Grotesk';
+    src: url('ClobberGrotesk-Regular.eot');
+    src: local('Clobber Grotesk Regular'), local('ClobberGrotesk-Regular'),
+        url('ClobberGrotesk-Regular.eot?#iefix') format('embedded-opentype'),
+        url('ClobberGrotesk-Regular.woff2') format('woff2'),
+        url('ClobberGrotesk-Regular.woff') format('woff'),
+        url('ClobberGrotesk-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Clobber Grotesk';
+    src: url('ClobberGrotesk-BoldItalic.eot');
+    src: local('Clobber Grotesk Bold Italic'), local('ClobberGrotesk-BoldItalic'),
+        url('ClobberGrotesk-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('ClobberGrotesk-BoldItalic.woff2') format('woff2'),
+        url('ClobberGrotesk-BoldItalic.woff') format('woff'),
+        url('ClobberGrotesk-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Clobber Grotesk';
+    src: url('ClobberGrotesk-Bold.eot');
+    src: local('Clobber Grotesk Bold'), local('ClobberGrotesk-Bold'),
+        url('ClobberGrotesk-Bold.eot?#iefix') format('embedded-opentype'),
+        url('ClobberGrotesk-Bold.woff2') format('woff2'),
+        url('ClobberGrotesk-Bold.woff') format('woff'),
+        url('ClobberGrotesk-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Clobber Grotesk';
+    src: url('ClobberGrotesk-MediumItalic.eot');
+    src: local('Clobber Grotesk Medium Italic'), local('ClobberGrotesk-MediumItalic'),
+        url('ClobberGrotesk-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('ClobberGrotesk-MediumItalic.woff2') format('woff2'),
+        url('ClobberGrotesk-MediumItalic.woff') format('woff'),
+        url('ClobberGrotesk-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Clobber Grotesk';
+    src: url('ClobberGrotesk-DemiBold.eot');
+    src: local('Clobber Grotesk DemiBold'), local('ClobberGrotesk-DemiBold'),
+        url('ClobberGrotesk-DemiBold.eot?#iefix') format('embedded-opentype'),
+        url('ClobberGrotesk-DemiBold.woff2') format('woff2'),
+        url('ClobberGrotesk-DemiBold.woff') format('woff'),
+        url('ClobberGrotesk-DemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
